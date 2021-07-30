@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { removeList, switchCardBetweenLists } from '@features/board';
 import { getListData } from '@selectors/board';
+import { lineClampStyle } from '@utils/styles';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from './Card';
@@ -23,13 +24,13 @@ const Wrapper = styled.div`
 const Header = styled.h3`
   margin: 0;
   line-height: 150%;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0;
   text-transform: capitalize;
   border-bottom: 1px solid rgb(48, 50, 54);
   display: grid;
   align-items: center;
-  grid-template: 1fr / 1fr max-content max-content;
-  grid-gap: 0.5rem;
+  grid-template: 1fr / 1fr max-content;
+  grid-gap: 0.75rem;
 `;
 
 const Icon = styled.span`
@@ -60,6 +61,10 @@ const AddIcon = styled.span`
   justify-content: center;
   width: 36px;
   height: 36px;
+`;
+
+const Title = styled.span`
+  ${lineClampStyle(1)};
 `;
 
 const allowDrop = (e) => e.preventDefault();
@@ -93,7 +98,7 @@ const List = ({ listID }) => {
     <>
       <Wrapper onDragOver={allowDrop} onDrop={onDrop}>
         <Header>
-          {listData.title}
+          <Title>{listData.title}</Title>
           <Icon onClick={deleteList}>&times;</Icon>
         </Header>
         <CardsContainer>

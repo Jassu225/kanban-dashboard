@@ -34,11 +34,9 @@ const Icon = styled.span`
 `;
 
 const Title = styled.span`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-size: 12px;
   color: rgb(138, 143, 152);
+  ${lineClampStyle(1)};
 `;
 
 const Description = styled.span`
