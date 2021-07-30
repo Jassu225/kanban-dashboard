@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@base/*": ["src/components/base/*"],
+      "@modules/*": ["src/components/modules/*"],
+      "@cont/*": ["src/components/container/*"],
+      "@icon/*": ["src/components/icons/*"],
+      "@utils/*": ["src/utils/*"],
+      "@features/*": ["src/store/features/*"],
+      "@selectors/*": ["src/store/selectors/*"],
+      "@constants/*": ["src/constants/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", ".next"]
+}
