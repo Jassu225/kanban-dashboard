@@ -1,32 +1,9 @@
-import styled from '@emotion/styled';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@modules/Dialog/Dialog';
 import { addNewList } from '@features/board';
-import Button from '@base/Button';
-import { useState } from 'react';
-
-const Wrapper = styled.div`
-  padding: 1rem;
-`;
-
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 1rem;
-  width: 560px;
-`;
-
-const Header = styled.h3`
-  line-height: 150%;
-  margin: 0;
-  margin-bottom: 1rem;
-`;
-
-const ActionContainer = styled.div``;
-const Submit = styled(Button)`
-  float: right;
-`;
+import { Wrapper, Form, Header, Submit } from './FormElements';
 
 const formKeys = {
   TITLE: 'title',
@@ -71,9 +48,9 @@ const NewListForm = ({ className, open, onClose }) => {
             error={!!errors[formKeys.TITLE]}
             helperText={errors[formKeys.TITLE]}
           />
-          <ActionContainer>
+          <div>
             <Submit type="submit">Submit</Submit>
-          </ActionContainer>
+          </div>
         </Form>
       </Wrapper>
     </Dialog>
