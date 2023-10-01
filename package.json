@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
@@ -19,6 +20,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.3.0"
+    "@emotion/babel-plugin": "^11.3.0",
+    "firebase-tools": "11.30.0"
   }
 }
